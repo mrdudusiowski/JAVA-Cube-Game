@@ -10,15 +10,20 @@ public class A2Projekt {
         Random cube = new Random();
         //Player player = new Player("Andrzej");
         //PlayerHuman player = new PlayerHuman("Andrzej");
-        Player player = new PlayerHuman("Andrzej");     //PlayerHuman lub PlayerComp
+        Player player = new PlayerComp("Andrzej");     //PlayerHuman lub PlayerComp
 
 //      Imie player'a
-        player.setName("Andrzej");
+        try {
+            player.setName("");
+        } catch (IllegalArgumentException ex) {
+            System.err.println("Błąd, źle wprowadzone dane! " + ex.getMessage());
+
+        }
 
 //      Powitanie
-        System.out.println("Witamy, wlasnie losujemy liczbe, zgadnij ja:\n\n");
+        System.out.println("Witamy, właśnie losujemy liczbę, zgadnij ją:\n\n");
 
-        //Wylosowanie liczb
+//      Wylosowanie liczb
         int los = cube.nextInt(6) + 1;
         int choose;
 
@@ -26,11 +31,11 @@ public class A2Projekt {
         do {
             choose = player.guess();
 
-            System.out.println(player.getName() + " wybral " + choose);
+            System.out.println(player.getName() + " wybrał " + choose);
 
-            //Warunki sprawdzajace
+//      Warunki sprawdzajace
             if (choose > 6) {
-                System.out.println("Kostka ma co najwyzej 6 oczek!");
+                System.out.println("Kostka ma co najwyżej 6 oczek!");
             }
             if (choose != los) {
                 System.out.println("PUDŁO!\n**********************");
@@ -50,4 +55,5 @@ public class A2Projekt {
 /*
 KISS - Keep it simple stupid
 REFAKTORYZACJA - PRACOWNAIE NAD PROGRAMEM
+Wyrażenia regularne - regex101.com ^[a-zA-Z][a-zA-Z0-9@\-_.]{2,29}$
  */

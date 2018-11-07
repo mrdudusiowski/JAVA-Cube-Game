@@ -20,10 +20,11 @@ public abstract class Player {
     Setter/Getter
      */
     public void setName(String name) {
-        if (name != null && !name.isEmpty()) {
+        if (name != null && name.matches("^[a-zA-Z][a-zA-Z0-9@\\-_.]{2,29}$")) {
             this.name = name;
         } else {
-            System.err.println("Blad, zle wproawdzone dane!");
+            //  System.err.println("Blad, zle wproawdzone dane!");
+            throw new IllegalArgumentException("Nieprawidłowe dane!");
         }
     }
 
