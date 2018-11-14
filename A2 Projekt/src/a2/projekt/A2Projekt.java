@@ -1,6 +1,7 @@
 package a2.projekt;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class A2Projekt {
@@ -25,6 +26,12 @@ public class A2Projekt {
 
         for (String o : list) {
             System.out.println(o);
+        }
+        
+        Iterator<String> it= list.iterator();
+        
+        while(it.hasNext()){
+        System.out.println(it.next());
         }
 
         game.addPlayer(player);
