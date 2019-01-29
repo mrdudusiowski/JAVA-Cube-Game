@@ -1,4 +1,4 @@
-package cube.game;
+package cube;
 
 import java.util.Scanner;
 

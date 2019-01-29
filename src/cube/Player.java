@@ -1,4 +1,4 @@
-package cube.game;
+package cube;
 
 public abstract class Player {
 //  Deklaracja zmiennych
